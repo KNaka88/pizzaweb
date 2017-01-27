@@ -8,9 +8,6 @@ $(function(){
      this.pizzaQuantity = pizzaQuantity;
   }
 
-  function UserCart(pizza){
-  }
-
   //prototype
   Pizza.prototype.sizePrice = function(){
     switch(this.pizzaSize){
@@ -36,17 +33,8 @@ $(function(){
     return (this.sizePrice() + this.toppingPrice()) * this.pizzaQuantity;
   }
 
-  Pizza.prototype.discount = function(){
-
-
-  }
-  Pizza.prototype.promotion = function(){
-
-  }
-
 
 ////Function
-
   //function for prototype:toppingPrice
   var toppingPriceCalc = function(pizzaToppings){
     var toppingsPrice = 0;
@@ -141,14 +129,9 @@ $(function(){
 
       pizzaQuantity = parseInt($("#pizza" +id+ "-quantity").val());
 
-      console.log("pizzaName = " +  pizzaName);
-      console.log("pizzaSize = " + pizzaSize);
-      console.log("pizzaToppings = " + pizzaToppings);
-      console.log("pizzaQuantity = " + pizzaQuantity);
 
       var pizza = new Pizza(pizzaName, pizzaSize, pizzaToppings, pizzaQuantity);
 
-      console.log(pizza);
 
       cart.push(pizza);
       console.log(cart)
