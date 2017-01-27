@@ -96,7 +96,11 @@ $(function(){
 
     //STEP1: when user click "add cart", get inputs and create object
 
-    $("#pizza1 button").click(function(){
+    $(".pizza-menu button").click(function(){
+
+      var i = (parseInt( this.id.replace(/[^0-9]*/g, "")));
+      alert(i);
+
       pizzaName = document.getElementById("pizza1-name").textContent;
 
       pizzaSize = $("#pizza1 input:radio[name=pizza1-size]:checked").val();
