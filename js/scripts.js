@@ -68,22 +68,22 @@ $(function(){
 
   var appendPizzaInfo = function(id){
     $("#appendPizzaInfo").append(
-      '<div class="col-md-3">' +
+      '<div class="col-md-4">' +
         '<h5 id="cartPizzaName' +id+ '">Pizza:<br> </h5>' +
       '</div>' +
-      '<div class="col-md-1">' +
+      '<div class="col-md-2">' +
         '<h5 id="cartPizzaSize' +id+ '">Size:<br> </h5>' +
         '</div>' +
       '<div class="col-md-3">' +
-        '<h5 id="cartPizzaTopping' +id+ '">Topping:<br> </h5>' +
+        '<h5 id="cartPizzaTopping' +id+ '">Topping:</h5>' +
       '</div>' +
       '<div class="col-md-1">' +
         '<h5 id="cartPizzaQuantity' +id+ '">Quantity:<br> </h5>' +
        '</div>' +
-       '<div class="col-md-2">' +
+       '<div class="col-md-1">' +
         '<h5 id="cartPizzaPrice' +id+ '">Price:<br> $</h5>' +
        '</div>' +
-       '<div class="col-md-2">' +
+       '<div class="col-md-1">' +
          '<button class="remove btn btn-warning">remove</button>' +
        '</div>'
      );
@@ -92,7 +92,7 @@ $(function(){
   var returnToppingLists = function(pizzaToppings){
     var returnToppingLists = "";
     for(var i=0; i<pizzaToppings.length; i++){
-        returnToppingLists += (pizzaToppings[i] + "<br>&nbsp");
+        returnToppingLists += ("<li>" + pizzaToppings[i] + "</li>");
     }
     return returnToppingLists;
   }
