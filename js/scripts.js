@@ -71,10 +71,10 @@ $(function(){
       '<div class="col-md-3">' +
         '<h5 id="cartPizzaName' +id+ '">Pizza:<br> </h5>' +
       '</div>' +
-      '<div class="col-md-2">' +
+      '<div class="col-md-1">' +
         '<h5 id="cartPizzaSize' +id+ '">Size:<br> </h5>' +
         '</div>' +
-      '<div class="col-md-2">' +
+      '<div class="col-md-3">' +
         '<h5 id="cartPizzaTopping' +id+ '">Topping:<br> </h5>' +
       '</div>' +
       '<div class="col-md-1">' +
@@ -82,8 +82,11 @@ $(function(){
        '</div>' +
        '<div class="col-md-2">' +
         '<h5 id="cartPizzaPrice' +id+ '">Price:<br> $</h5>' +
+       '</div>' +
+       '<div class="col-md-2">' +
+         '<button class="remove btn btn-warning">remove</button>' +
        '</div>'
-      )
+     );
   }
 
   var returnToppingLists = function(pizzaToppings){
@@ -157,6 +160,8 @@ $(function(){
       $("#cartPizzaPrice" + id).append(pizza.pizzaPrice());
 
       $("#totalPrice").text( returnTotalPrice(cartArray));
+
+      $(this).off();
     });
 
 
