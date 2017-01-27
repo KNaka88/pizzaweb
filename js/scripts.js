@@ -76,6 +76,29 @@ $(function(){
   }
   //End of function for prototype:toppingPrice
 
+  var appendPizzaInfo = function(){
+    $("#appendPizzaInfo").append(
+      '<div class="col-md-3">' +
+        '<h5>Pizza:</h5>' +
+      '</div>' +
+        '<div class="col-md-2">' +
+      '<h5>Size:</h5>' +
+        '</div>' +
+      '<div class="col-md-2">' +
+        '<h5>Topping Options</h5>' +
+      '</div>' +
+      '<div class="col-md-1">' +
+        '<h5>Quantity</h5>' +
+       '</div>' +
+       '<div class="col-md-2">' +
+        '<h5>Price</h5>' +
+       '</div>' 
+      )
+  }
+
+
+
+
 
 
 ////Gloval Variables
@@ -127,6 +150,8 @@ $(function(){
       console.log("Prototype, price = " + pizza.sizePrice());
       console.log("Prototype Topping Price = " + pizza.toppingPrice());
       console.log("Prototype totalprice for this pizza =" + pizza.pizzaPrice());
+
+      appendPizzaInfo();
     });
 
 
