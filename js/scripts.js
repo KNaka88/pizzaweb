@@ -34,6 +34,8 @@ $(function(){
   }
 
 
+
+
 ////Function
   //function for prototype:toppingPrice
   var toppingPriceCalc = function(pizzaToppings){
@@ -92,6 +94,14 @@ $(function(){
     return returnToppingLists;
   }
 
+  var returnTotalPrice = function(cart){
+    var totalPrice = 0;
+    for(var i=0; i<cart.length; i++){
+      totalPrice += cart[i].pizzaPrice();
+    }
+      return totalPrice;
+  }
+
 
 
 
@@ -101,9 +111,7 @@ $(function(){
 
 
 
-  var cart = [];
-  var totalPrice = 0;
-  var totalQuantity = 0;
+  var cartArray = [];
 
 ////Business Logic Goes Here
 
@@ -133,8 +141,8 @@ $(function(){
       var pizza = new Pizza(pizzaName, pizzaSize, pizzaToppings, pizzaQuantity);
 
 
-      cart.push(pizza);
-      console.log(cart)
+      cartArray.push(pizza);
+      console.log(cartArray)
 
       //STEP2: Given user inputs, call prototype and calculate the price
       console.log("Prototype, price = " + pizza.sizePrice());
@@ -147,7 +155,12 @@ $(function(){
       $("#cartPizzaTopping" + id).append(returnToppingLists(pizza.pizzaToppings));
       $("#cartPizzaQuantity" + id).append(pizza.pizzaQuantity);
       $("#cartPizzaPrice" + id).append(pizza.pizzaPrice());
+
+      $("#totalPrice").text( returnTotalPrice(cartArray));
     });
+
+
+
 
 
     //STEP3: When user click purchase, show the order summary and open payment form
