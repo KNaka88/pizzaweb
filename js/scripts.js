@@ -13,9 +13,36 @@ function UserCart(pizza){
 
 }
 
-
 //prototype
+Pizza.prototype.sizePrice = function(){
+  switch(this.pizzaSize){
+    case "small":
+      return 8;
+      break;
+    case "medium":
+      return 10;
+      break;
+    case "large":
+      return 12;
+      break;
+    default:
+      alert("error");
+  }
+}
+
+// Pizza.prototype.toppingsPrice = function(){
+//   switch(this.pizzaToppings){
+//
+//   }
+//
+// }
+
+
+
+
+
 Pizza.prototype.discount = function(){
+
 
 }
 Pizza.prototype.promotion = function(){
@@ -27,10 +54,14 @@ Pizza.prototype.promotion = function(){
 var pizzaName = "";
 var pizzaSize = "";
 var pizzaToppings = [];
+var pizzaToppingsPrice = [];
 var pizzaPrice = 0;
 var pizzaQuantity = 0;
+
+var cart = [];
 var totalPrice = 0;
 var totalQuantity = 0;
+
 var pizza1 = new Pizza();
 
 //Business Logic Goes Here
@@ -60,12 +91,17 @@ var pizza1 = new Pizza();
     pizza1 = new Pizza(pizzaName, pizzaSize, pizzaToppings, pizzaPrice, pizzaQuantity);
 
     console.log(pizza1);
+
+    cart.push(pizza1);
+    console.log(cart)
+
+    console.log("Prototype, price = " + pizza1.sizePrice());
+
   });
 
-
-
-
   //STEP2: Given user inputs, call prototype and calculate the price
+
+
 
   //STEP3: When user click purchase, show the order summary and open payment form
 
