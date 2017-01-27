@@ -121,13 +121,11 @@ $(function(){
       cart.push(pizza1);
       console.log(cart)
 
+      //STEP2: Given user inputs, call prototype and calculate the price
       console.log("Prototype, price = " + pizza1.sizePrice());
       console.log("Prototype Topping Price = " + pizza1.toppingPrice());
       console.log("Prototype totalprice for this pizza =" + pizza1.pizzaPrice());
     });
-
-    //STEP2: Given user inputs, call prototype and calculate the price
-
 
 
     //STEP3: When user click purchase, show the order summary and open payment form
