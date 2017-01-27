@@ -76,24 +76,32 @@ $(function(){
   }
   //End of function for prototype:toppingPrice
 
-  var appendPizzaInfo = function(){
+  var appendPizzaInfo = function(id){
     $("#appendPizzaInfo").append(
       '<div class="col-md-3">' +
-        '<h5>Pizza:</h5>' +
+        '<h5 id="cartPizzaName' +id+ '">Pizza:<br> </h5>' +
       '</div>' +
-        '<div class="col-md-2">' +
-      '<h5>Size:</h5>' +
+      '<div class="col-md-2">' +
+        '<h5 id="cartPizzaSize' +id+ '">Size:<br> </h5>' +
         '</div>' +
       '<div class="col-md-2">' +
-        '<h5>Topping Options</h5>' +
+        '<h5 id="cartPizzaTopping' +id+ '">Topping:<br> </h5>' +
       '</div>' +
       '<div class="col-md-1">' +
-        '<h5>Quantity</h5>' +
+        '<h5 id="cartPizzaQuantity' +id+ '">Quantity:<br> </h5>' +
        '</div>' +
        '<div class="col-md-2">' +
-        '<h5>Price</h5>' +
-       '</div>' 
+        '<h5 id="cartPizzaPrice' +id+ '">Price:<br> $</h5>' +
+       '</div>'
       )
+  }
+
+  var returnToppingLists = function(pizzaToppings){
+    var returnToppingLists = "";
+    for(var i=0; i<pizzaToppings.length; i++){
+        returnToppingLists += (pizzaToppings[i] + "<br>&nbsp");
+    }
+    return returnToppingLists;
   }
 
 
@@ -103,34 +111,33 @@ $(function(){
 
 ////Gloval Variables
 
-  var pizzaName = "";
-  var pizzaSize = "";
-  var pizzaToppings = [];
-  var pizzaToppingsPrice = [];
-  var pizzaQuantity = 0;
+
 
   var cart = [];
   var totalPrice = 0;
   var totalQuantity = 0;
-
-  var pizza1 = new Pizza();
 
 ////Business Logic Goes Here
 
     //STEP1: when user click "add cart", get inputs and create object
 
     $(".pizza-menu button").click(function(){
+      var id =0;
+      var pizzaName = "";
+      var pizzaSize = "";
+      var pizzaToppings = [];
+      var pizzaQuantity = 0;
 
-      var id = (parseInt( this.id.replace(/[^0-9]*/g, "")));
+      id = (parseInt( this.id.replace(/[^0-9]*/g, "")));
 
       pizzaName = document.getElementById("pizza" +id+ "-name").textContent;
 
       pizzaSize = $("#pizza" +id+ " input:radio[name=pizza" +id+ "-size]:checked").val();
-      //remove duplicates!!
+
+
       $("#pizza" +id+ " input:checkbox[name=pizza" +id+ "-topping]:checked").each(function(){
         pizzaToppings.push($(this).val());
       });
-
 
       pizzaQuantity = parseInt($("#pizza" +id+ "-quantity").val());
 
@@ -151,7 +158,12 @@ $(function(){
       console.log("Prototype Topping Price = " + pizza.toppingPrice());
       console.log("Prototype totalprice for this pizza =" + pizza.pizzaPrice());
 
-      appendPizzaInfo();
+      appendPizzaInfo(id);
+      $("#cartPizzaName" + id).append(pizza.pizzaName);
+      $("#cartPizzaSize" + id).append(pizza.pizzaSize);
+      $("#cartPizzaTopping" + id).append(returnToppingLists(pizza.pizzaToppings));
+      $("#cartPizzaQuantity" + id).append(pizza.pizzaQuantity);
+      $("#cartPizzaPrice" + id).append(pizza.pizzaPrice());
     });
 
 
