@@ -62,13 +62,17 @@ var pizza1 = new Pizza();
     console.log(pizza1);
   });
 
-  //STEP2: if user didn't provide sufficient info, alert.
 
-  //STEP3: Given user inputs, call prototype and calculate the price
 
-  //STEP4: When user click purchase, show the order summary and open payment form
 
-  //STEP5: when user type the payment info and buy button show the purchase summary
+  //STEP2: Given user inputs, call prototype and calculate the price
+
+  //STEP3: When user click purchase, show the order summary and open payment form
+
+
+  //STEP4: when user type the payment info and buy button show the purchase summary
+
+  //STEP5: if user didn't provide sufficient info, alert.
 
 
 //Interface Logic Goes Here
