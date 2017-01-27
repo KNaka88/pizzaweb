@@ -1,11 +1,10 @@
 $(function(){
 
   //Constractor
-  function Pizza (pizzaName, pizzaSize, pizzaToppings, pizzaPrice, pizzaQuantity){
+  function Pizza (pizzaName, pizzaSize, pizzaToppings, pizzaQuantity){
      this.pizzaName = pizzaName;
      this.pizzaSize = pizzaSize;
      this.pizzaToppings = pizzaToppings;
-     this.pizzaPrice = pizzaPrice;
      this.pizzaQuantity = pizzaQuantity;
   }
 
@@ -33,7 +32,7 @@ $(function(){
       return toppingPriceCalc(this.pizzaToppings);
   }
 
-  Pizza.prototype.totalPriceForThisPizza = function(){
+  Pizza.prototype.pizzaPrice = function(){
     return (this.sizePrice() + this.toppingPrice()) * this.pizzaQuantity;
   }
 
@@ -85,7 +84,6 @@ $(function(){
   var pizzaSize = "";
   var pizzaToppings = [];
   var pizzaToppingsPrice = [];
-  var pizzaPrice = 0;
   var pizzaQuantity = 0;
 
   var cart = [];
@@ -108,17 +106,15 @@ $(function(){
         pizzaToppings.push($(this).val());
       });
 
-      pizzaPrice = parseInt(document.getElementById("pizza1-price").textContent);
 
       pizzaQuantity = parseInt($("#pizza1-quantity").val());
 
       console.log("pizzaName = " +  pizzaName);
       console.log("pizzaSize = " + pizzaSize);
       console.log("pizzaToppings = " + pizzaToppings);
-      console.log("pizzaPrice = " + pizzaPrice);
       console.log("pizzaQuantity = " + pizzaQuantity);
 
-      pizza1 = new Pizza(pizzaName, pizzaSize, pizzaToppings, pizzaPrice, pizzaQuantity);
+      pizza1 = new Pizza(pizzaName, pizzaSize, pizzaToppings, pizzaQuantity);
 
       console.log(pizza1);
 
@@ -127,7 +123,7 @@ $(function(){
 
       console.log("Prototype, price = " + pizza1.sizePrice());
       console.log("Prototype Topping Price = " + pizza1.toppingPrice());
-      console.log("Prototype totalprice for this pizza =" + pizza1.totalPriceForThisPizza());
+      console.log("Prototype totalprice for this pizza =" + pizza1.pizzaPrice());
     });
 
     //STEP2: Given user inputs, call prototype and calculate the price
