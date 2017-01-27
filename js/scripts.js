@@ -1,7 +1,6 @@
 $(function(){
 
 //Constractor
-
   //pizza
    //size
    //toppings
