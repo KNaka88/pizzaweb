@@ -26,16 +26,44 @@ Pizza.prototype.sizePrice = function(){
       return 12;
       break;
     default:
-      alert("error");
+      alert("pizzaSize: error");
   }
 }
 
-// Pizza.prototype.toppingsPrice = function(){
-//   switch(this.pizzaToppings){
-//
-//   }
-//
-// }
+Pizza.prototype.toppingPrice = function(){
+    return toppingPriceCalc(this.pizzaToppings);
+}
+
+
+//Function
+var toppingPriceCalc = function(pizzaToppings){
+  var toppingsPrice = 0;
+  for(var i=0; i<pizzaToppings.length; i++){
+    toppingsPrice += getToppingPriceList(pizzaToppings[i]);
+  }
+  return toppingsPrice;
+}
+
+var getToppingPriceList = function(pizzaToppings){
+  switch(pizzaToppings){
+    case "tomatoes":
+      return 1;
+      break;
+    case "bacon":
+      return 2;
+      break;
+    case "mozzarella":
+      return 1.5;
+      break;
+    case "bbqSauce":
+      return 0.5;
+      break;
+    default:
+      alert("pizzaToppings: Error");
+  }
+}
+
+
 
 
 
@@ -96,7 +124,7 @@ var pizza1 = new Pizza();
     console.log(cart)
 
     console.log("Prototype, price = " + pizza1.sizePrice());
-
+    console.log("Prototype Topping Price = " + pizza1.toppingPrice());
   });
 
   //STEP2: Given user inputs, call prototype and calculate the price
