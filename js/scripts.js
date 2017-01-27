@@ -98,37 +98,35 @@ $(function(){
 
     $(".pizza-menu button").click(function(){
 
-      var i = (parseInt( this.id.replace(/[^0-9]*/g, "")));
-      alert(i);
+      var id = (parseInt( this.id.replace(/[^0-9]*/g, "")));
 
-      pizzaName = document.getElementById("pizza1-name").textContent;
+      pizzaName = document.getElementById("pizza" +id+ "-name").textContent;
 
-      pizzaSize = $("#pizza1 input:radio[name=pizza1-size]:checked").val();
-
+      pizzaSize = $("#pizza" +id+ " input:radio[name=pizza" +id+ "-size]:checked").val();
       //remove duplicates!!
-      $("#pizza1 input:checkbox[name=pizza1-topping]:checked").each(function(){
+      $("#pizza" +id+ " input:checkbox[name=pizza" +id+ "-topping]:checked").each(function(){
         pizzaToppings.push($(this).val());
       });
 
 
-      pizzaQuantity = parseInt($("#pizza1-quantity").val());
+      pizzaQuantity = parseInt($("#pizza" +id+ "-quantity").val());
 
       console.log("pizzaName = " +  pizzaName);
       console.log("pizzaSize = " + pizzaSize);
       console.log("pizzaToppings = " + pizzaToppings);
       console.log("pizzaQuantity = " + pizzaQuantity);
 
-      pizza1 = new Pizza(pizzaName, pizzaSize, pizzaToppings, pizzaQuantity);
+      var pizza = new Pizza(pizzaName, pizzaSize, pizzaToppings, pizzaQuantity);
 
-      console.log(pizza1);
+      console.log(pizza);
 
-      cart.push(pizza1);
+      cart.push(pizza);
       console.log(cart)
 
       //STEP2: Given user inputs, call prototype and calculate the price
-      console.log("Prototype, price = " + pizza1.sizePrice());
-      console.log("Prototype Topping Price = " + pizza1.toppingPrice());
-      console.log("Prototype totalprice for this pizza =" + pizza1.pizzaPrice());
+      console.log("Prototype, price = " + pizza.sizePrice());
+      console.log("Prototype Topping Price = " + pizza.toppingPrice());
+      console.log("Prototype totalprice for this pizza =" + pizza.pizzaPrice());
     });
 
 
