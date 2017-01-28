@@ -11,7 +11,8 @@
 
 ## Specifications
 * When user choose the pizza size, quantity, and click "add cart", result show ups on Shopping Cart.
-##### **Example Input:** Select(Cheese)--- Size: S, Topping: (Empty), Quantity:1  
+##### **Example Input:**  
+######Select(Cheese)--- Size: S, Topping: (Empty), Quantity:1  
 ##### **Example Output:**
 * Pizza: Cheese
 * Size: small
@@ -44,7 +45,8 @@
 
 
 * When user changes either Size or Topping or Quantity, price is calculated based on the result and show up on Shopping Cart.
-##### **Example1 Input:** Select(Cheese)--- Size: L, Topping: (Empty), Quantity:1  
+##### **Example1 Input:**
+######Select(Cheese)--- Size: L, Topping: (Empty), Quantity:1  
 ##### **Example1 Output:**
 * Pizza: Cheese
 * Size: large
