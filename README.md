@@ -77,7 +77,7 @@
 
 
 * When user clicks same cart twice, nothing happens
-##### **Example Input:** Click Twice--- Top Left Pizza, Size: L, Topping: (Empty), Quantity:1
+##### **Example Input:** Select--- Top Left Pizza, Size: L, Topping: (Empty), Quantity:1 (Click Twice)
 ##### **Example Output:**
 * Pizza: Nice Cheese1
 * Size: large
@@ -86,16 +86,6 @@
 * Price: $12
 * Remove (Button)
 * Total $12
-
-
-* When user clicks remove button, selected pizza menu will disappear
-##### **Example1 Input:** Click Remove
-##### **Example1 Output:**
-NONE
-
-
-
-
 
 ## Setup/Installation Requirements
 
