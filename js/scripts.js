@@ -68,24 +68,23 @@ $(function(){
 
   var appendPizzaInfo = function(id){
     $("#appendPizzaInfo").append(
-      '<div class="col-md-4">' +
-        '<h5 id="cartPizzaName' +id+ '">Pizza:<br> </h5>' +
-      '</div>' +
-      '<div class="col-md-2">' +
-        '<h5 id="cartPizzaSize' +id+ '">Size:<br> </h5>' +
+      '<div class="pizzainfo">' +
+        '<div class="col-md-4">' +
+          '<h5 id="cartPizzaName' +id+ '">Pizza:<br> </h5>' +
         '</div>' +
-      '<div class="col-md-3">' +
-        '<h5 id="cartPizzaTopping' +id+ '">Topping:</h5>' +
-      '</div>' +
-      '<div class="col-md-1">' +
-        '<h5 id="cartPizzaQuantity' +id+ '">Quantity:<br> </h5>' +
-       '</div>' +
-       '<div class="col-md-1">' +
-        '<h5 id="cartPizzaPrice' +id+ '">Price:<br> $</h5>' +
-       '</div>' +
-       '<div class="col-md-1">' +
-         '<button class="remove btn btn-warning">remove</button>' +
-       '</div>'
+        '<div class="col-md-2">' +
+          '<h5 id="cartPizzaSize' +id+ '">Size:<br> </h5>' +
+          '</div>' +
+        '<div class="col-md-3">' +
+          '<h5 id="cartPizzaTopping' +id+ '">Topping:</h5>' +
+        '</div>' +
+        '<div class="col-md-1">' +
+          '<h5 id="cartPizzaQuantity' +id+ '">Quantity:<br> </h5>' +
+         '</div>' +
+         '<div class="col-md-2">' +
+          '<h5 id="cartPizzaPrice' +id+ '">Price:<br> $</h5>' +
+         '</div>' +
+      '</div>'
      );
   }
 
@@ -147,11 +146,7 @@ $(function(){
       cartArray.push(pizza);
       console.log(cartArray)
 
-      //STEP2: Given user inputs, call prototype and calculate the price
-      console.log("Prototype, price = " + pizza.sizePrice());
-      console.log("Prototype Topping Price = " + pizza.toppingPrice());
-      console.log("Prototype totalprice for this pizza =" + pizza.pizzaPrice());
-
+      $("#cart").show();
       appendPizzaInfo(id);
       $("#cartPizzaName" + id).append(pizza.pizzaName);
       $("#cartPizzaSize" + id).append(pizza.pizzaSize);
@@ -160,32 +155,7 @@ $(function(){
       $("#cartPizzaPrice" + id).append(pizza.pizzaPrice());
 
       $("#totalPrice").text( returnTotalPrice(cartArray));
-
+      console.log(cartArray);
       $(this).off();
     });
-
-
-
-
-
-    //STEP3: When user click purchase, show the order summary and open payment form
-
-
-    //STEP4: when user type the payment info and buy button show the purchase summary
-
-    //STEP5: if user didn't provide sufficient info, alert.
-
-
-  //Interface Logic Goes Here
-
-
-
-
-
-
 });
-
-//Bonus
-  //COUPON CODE form`
-  //Pop up window (Modal)
-  //another order confirmation page
