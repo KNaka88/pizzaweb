@@ -11,9 +11,9 @@
 
 ## Specifications
 * When user choose the pizza size, quantity, and click "add cart", result show ups on Shopping Cart.
-##### **Example Input:** Select--- Top Left Pizza, Size: S, Topping: (Empty), Quantity:1  
+##### **Example Input:** Select(Cheese)--- Size: S, Topping: (Empty), Quantity:1  
 ##### **Example Output:**
-* Pizza: Nice Cheese1
+* Pizza: Cheese
 * Size: small
 * Topping: (Empty)
 * Quantity: 1
@@ -23,18 +23,18 @@
 
 * When user choose another pizza, result shows up on Shopping Cart and total price is added.
 ##### **Example Input:**
-######Select--- Top Left Pizza, Size: S, Topping: (Empty), Quantity:1  
-######Select--- Top Right Pizza, Size: S, Topping: (Empty), Quantity:1  
+######Select(Cheese)--- Size: S, Topping: (Empty), Quantity:1  
+######Select(Teriyaki)--- Size: S, Topping: (Empty), Quantity:1  
 ##### **Example Output:**
 
-* Pizza: Nice Cheese1
+* Pizza: Cheese
 * Size: small
 * Topping: (Empty)
 * Quantity: 1
 * Price: $8
 * Remove (Button)
 
-* Pizza: Nice Cheese2
+* Pizza: Teriyaki
 * Size: small
 * Topping: (Empty)
 * Quantity: 1
@@ -44,9 +44,9 @@
 
 
 * When user changes either Size or Topping or Quantity, price is calculated based on the result and show up on Shopping Cart.
-##### **Example1 Input:** Select--- Top Left Pizza, Size: L, Topping: (Empty), Quantity:1  
+##### **Example1 Input:** Select(Cheese)--- Size: L, Topping: (Empty), Quantity:1  
 ##### **Example1 Output:**
-* Pizza: Nice Cheese1
+* Pizza: Cheese
 * Size: large
 * Topping: (Empty)
 * Quantity: 1
@@ -55,9 +55,9 @@
 * Total $12
 
 
-##### **Example2 Input:** Select--- Top Left Pizza, Size: L, Topping: (Empty), Quantity:2  
+##### **Example2 Input:** Select(Cheese)---Size: L, Topping: (Empty), Quantity:2  
 ##### **Example2 Output:**
-* Pizza: Nice Cheese1
+* Pizza: Cheese
 * Size: large
 * Topping: (Empty)
 * Quantity: 2
@@ -65,11 +65,11 @@
 * Remove (Button)
 * Total $24
 
-##### **Example3 Input:** Select--- Top Left Pizza, Size: L, Topping: Bacon, Quantity:2  
+##### **Example3 Input:** Select(Cheese)---Size: L, Topping: Bacon, Quantity:2  
 ##### **Example3 Output:**
-* Pizza: Nice Cheese1
+* Pizza: Cheese
 * Size: large
-* Topping: Bacon
+* Topping: bacon
 * Quantity: 2
 * Price: $28
 * Remove (Button)
@@ -77,9 +77,9 @@
 
 
 * When user clicks same cart twice, nothing happens
-##### **Example Input:** Select--- Top Left Pizza, Size: L, Topping: (Empty), Quantity:1 (Click Twice)
+##### **Example Input:** Select(Cheese)--- Size: L, Topping: (Empty), Quantity:1 (Click Twice)
 ##### **Example Output:**
-* Pizza: Nice Cheese1
+* Pizza: Cheese
 * Size: large
 * Topping: (Empty)
 * Quantity: 1
